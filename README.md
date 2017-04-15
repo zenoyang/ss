@@ -13,6 +13,8 @@
 
 
 ishadow有12个免费ss可供切换  http://free.ishadow.online/ 
+
 h6h6有5个免费ss可供切换  http://h6v6.com/ 
+
 可在ss.py的main方法中配置，默认是随机使用某个ss
 
