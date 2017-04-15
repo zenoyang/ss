@@ -1,0 +1,9 @@
+这是一个自动从网上获取免费ss账号并且配置本机代理的脚本
+
+
+前提是已经安装了Shadowsocks
+安装：pip install shadowsocks
+
+
+使用方法是: 
+./run.sh  或  python3 ss.py
