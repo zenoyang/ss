@@ -8,8 +8,9 @@
 （windows下需要提前装Python3 以及 pip）
 
 ### 安装Shadowsocks
+```
 sudo pip install shadowsocks
-
+```
 ### Chrome安装SwitchyOmega插件并配置
 将项目中的SwitchyOmega.crx拖向 设置-扩展程序 即可
 安装好之后Chrome右上角有个圈圈，点击圈圈->选项->新建情景模式->随意取个名字->代理协议:SOCKS5,代理服务器:127.0.0.1,代理端口:1080就可以了。
@@ -35,9 +36,13 @@ h6h6有5个免费ss可供切换  http://h6v6.com/
 ### 使用命令
 爬虫不维护的话很快会失效，所有可以在网上找到免费的SS账号或者购买的ss账号，将账号信息添加到命令中对应位置即可。
 下面是一个ss账号的信息：
+```
 server: 198.167.142.73  #服务器ip
 port: 443          		  #端口
 password: h6v6.com      #密码
 method: aes-256-cfb 	  #加密方式
+```
 一个命令解决问题：	
+```
 sslocal -s 198.167.142.73 -p 443 -l 1080 -k "h6v6.com" -t 300 -m aes-256-cfb
+```
