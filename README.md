@@ -46,3 +46,4 @@ method: aes-256-cfb 	  #加密方式
 ```
 sslocal -s 45.32.31.5 -p 25 -l 1080 -k "fastfly" -t 300 -m aes-256-cfb
 ```
+买/找一个永久/长久免费的ss账号，将命令写在记事本中，重命名为ss.bat/ss.sh，每次使用双击即可。
