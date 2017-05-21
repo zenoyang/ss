@@ -35,14 +35,14 @@ h6h6有5个免费ss可供切换  http://h6v6.com/
 
 ### 使用命令
 爬虫不维护的话很快会失效，所有可以在网上找到免费的SS账号或者购买的ss账号，将账号信息添加到命令中对应位置即可。
-下面是一个ss账号的信息：
+下面是一个永久免费的ss账号的信息：
 ```
-server: 198.167.142.73  #服务器ip
-port: 443          		  #端口
-password: h6v6.com      #密码
+server: 45.32.31.5  #服务器ip
+port: 25          		  #端口
+password: fastfly      #密码
 method: aes-256-cfb 	  #加密方式
 ```
 一个命令解决问题：	
 ```
-sslocal -s 198.167.142.73 -p 443 -l 1080 -k "h6v6.com" -t 300 -m aes-256-cfb
+sslocal -s 45.32.31.5 -p 25 -l 1080 -k "fastfly" -t 300 -m aes-256-cfb
 ```
