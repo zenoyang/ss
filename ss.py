@@ -11,7 +11,8 @@ import random
 
 def get_ss_from_ishadow():
     # url = 'http://xyz.ishadow.online/'
-    url = 'http://free.ishadow.online/'
+    # url = 'http://free.ishadow.online/'
+    url = 'http://ss.ishadowx.com/'
 
     try:
         html = requests.get(url)
@@ -92,6 +93,11 @@ def sslocal_h6h6(index):
 
 def main():
     try:
+    	# h6h6有5个免费ss可供切换  0-4
+        # 这5个ss相关信息可在 http://h6v6.com/ 中查看
+        index = random.randint(0, 2)
+        sslocal_h6h6(index)
+    except:
         # ishadow有12个免费ss可供切换 集体信息在 http://free.ishadow.online/ 中查看
         '''
         UNITEDSTATES    0-2     一般
@@ -101,11 +107,6 @@ def main():
         '''
         index = random.randint(0, 11) 
         sslocal_ishadow(index)
-    except:
-        # h6h6有5个免费ss可供切换  0-4
-        # 这5个ss相关信息可在 http://h6v6.com/ 中查看
-        index = random.randint(0, 4)
-        sslocal_h6h6(index)
 
 
 if __name__ == '__main__':
