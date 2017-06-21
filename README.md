@@ -5,11 +5,11 @@
 
 ## 准备
 
-（windows下需要提前装Python3 以及 pip）
+需要提前装Python3 以及 pip
 
 ### 安装Shadowsocks
 ```
-sudo pip install shadowsocks
+pip install shadowsocks
 ```
 ### Chrome安装SwitchyOmega插件并配置
 将项目中的SwitchyOmega.crx拖向 设置-扩展程序 即可
@@ -33,17 +33,28 @@ ishadow有12个免费ss可供切换  http://free.ishadow.online/
 h6h6有5个免费ss可供切换  http://h6v6.com/ 
 可在ss.py的main方法中配置，默认是随机使用某个ss
 
+//2017/06/21 周三 add
+发现爬虫已经全部失效了，但是又懒得维护，直接在下方分享了一些免费的ss账号信息
+
 ### 使用命令
 爬虫不维护的话很快会失效，所有可以在网上找到免费的SS账号或者购买的ss账号，将账号信息添加到命令中对应位置即可。
-下面是一个永久免费的ss账号的信息：
+下面是分享一些免费的ss账号的信息，使用期限未知：
 ```
-server: 45.32.31.5  #服务器ip
-port: 25          		  #端口
-password: fastfly      #密码
-method: aes-256-cfb 	  #加密方式
+服务器1：67.21.78.208 端口：7493 密码：dongtaiwang.com 加密方式：aes-256-cfb 
+服务器2：104.160.185.150 端口：6123 密码：ntdtv.com 加密方式：aes-256-cfb 
+服务器3：67.21.78.149 端口：1978 密码：dongtaiwang.com 加密方式：aes-256-cfb SSR协议：auth_sha1_v4 混淆：tls1.2_ticket_auth 
+服务器4：104.160.185.80 端口：4810 密码：ntdtv.com 加密方式：aes-256-cfb SSR协议：auth_sha1_v4 混淆：tls1.2_ticket_auth 
+服务器5：104.160.185.160 端口：6832 密码：ntdtv.com 加密方式：aes-256-cfb SSR协议：auth_sha1_v4 混淆：tls1.2_ticket_auth 
+服务器6：47.74.132.157 端口：2345 密码：dongtaiwang.com 加密方式：aes-256-cfb SSR协议：auth_sha1_v4 混淆：tls1.2_ticket_auth 
+服务器7：107.175.95.241 点此查看连接信息 
+服务器8：107.175.94.126 点此查看连接信息 
+服务器9：us.bilibilitv.pw 端口：16862 密码：namaho.org 加密方式：aes-256-cfb
+服务器10：hk.bilibilitv.pw 端口：16862 密码：namaho.org 加密方式：aes-256-cfb
+服务器11：jp.bilibilitv.pw 端口：16862 密码：namaho.org 加密方式：aes-256-cfb
+服务器12：47.74.128.250 端口：2333 密码：ntdtv.com 加密方式：aes-256-cfb SSR协议：auth_sha1_v4 混淆：tls1.2_ticket_auth 
 ```
 一个命令解决问题：	
 ```
-sslocal -s 45.32.31.5 -p 25 -l 1080 -k "fastfly" -t 300 -m aes-256-cfb
+sslocal -s 104.160.185.150 -p 6123 -l 1080 -k "ntdtv.com" -t 300 -m aes-256-cfb
 ```
-买/找一个永久/长久免费的ss账号，将命令写在记事本中，重命名为ss.bat/ss.sh，每次使用双击即可。
+买/找一个ss账号，将命令写在记事本中，重命名为ss.bat/ss.sh，运行即可
