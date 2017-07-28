@@ -34,8 +34,17 @@ h6h6有5个免费ss可供切换  http://h6v6.com/
 
 ### 使用命令
 爬虫不维护的话很快会失效，所有可以在网上找到免费的SS账号或者购买的ss账号，将账号信息添加到命令中对应位置即可。  
-一个命令解决问题：	
+```
+sslocal -s 服务器地址 -p 服务器端口 -l 本地端端口 -k 密码 -m 加密方法
+```
+配合nohup和&可以使之后台运行，关闭终端也不影响：
+```
+nohup sslocal -s 服务器地址 -p 服务器端口 -l 本地端端口 -k 密码 -m 加密方法 &
+```
+例如：
 ```
 sslocal -s 104.160.185.150 -p 6123 -l 1080 -k "ntdtv.com" -t 300 -m aes-256-cfb 
 ```
 如果是长期可使用的ss，将命令写进脚本中使用更方便
+
+详细介绍：[Shadowsocks (简体中文)](https://wiki.archlinux.org/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.91.BD.E4.BB.A4.E8.A1.8C)
