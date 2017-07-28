@@ -10,7 +10,8 @@ import os
 
 def get_free_ss_info():
     # url = 'http://xyz.ishadow.online/'
-    url = 'http://free.ishadow.online/'
+    # url = 'http://free.ishadow.online/'
+    url = 'http://ss.ishadowx.com/'
 
     try:
         html = requests.get(url)
@@ -40,32 +41,37 @@ def get_free_ss_info():
     # Method
     pattern = re.compile("<h4>Method:(.*?)</h4>")
     method = pattern.findall(html.text)
-
+    ss_infos = []
     for i in range(12):
-        yield {'IP_Address': ip_address[i], 'port': port[i], 'local_port': local_port,
-               'Password': password[i], 'Method': method[i]}
+        # yield {'IP_Address': ip_address[i], 'port': port[i], 'local_port': local_port,
+        #        'Password': password[i], 'Method': method[i]}
+        ss_infos.append({'IP_Address': ip_address[i], 'port': port[i], 'local_port': local_port,
+                         'Password': password[i], 'Method': method[i]})
+    return ss_infos
 
 
 def main():
-    ss_infos = []
-    for item in get_free_ss_info():
-        ss_infos.append(item)
+    # ss_infos = []
+    # for item in get_free_ss_info():
+    #     ss_infos.append(item)
+    ss_infos = get_free_ss_info()
 
-    ss = ss_infos[0]  # 这里有12个免费ss可供切换
+    str = '''
+1-3: 美国   
+4-6: 日本   
+7-9: 新加坡
+10-12: SSR
     '''
-    UNITEDSTATES    0-2     一般
-    JAPAN           3-5     貌似不能用
-    SINGAPORE       6-8     貌似速度快点，YouTube 1080p不卡顿
-    SSR             9-11    没测试
-    '''
+    print (str)
+    i = input('请输入要使用的ss序号：')
+    i = int(i)
+    ss = ss_infos[i-1]
 
-    command = "sslocal -s %s -p %s -l %s -k %s -m %s" % (ss.get('IP_Address'),
-                                                         ss.get('port'), ss.get('local_port'), ss.get('Password'),
-                                                         ss.get('Method'))
+    command = "sslocal -s %s -p %s -l %s -k %s -m %s" % (ss.get('IP_Address'), ss.get('port'), ss.get('local_port'),
+                                                         ss.get('Password'), ss.get('Method'))
 
     os.system('echo ' + command)
     os.system(command)
 
 if __name__ == '__main__':
     main()
-
