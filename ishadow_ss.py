@@ -2,6 +2,7 @@
 
 # yz
 # 2017/4/11
+# 2017-12-30 修复
 
 import requests
 import re
@@ -25,7 +26,7 @@ def get_free_ss_info():
     ip_address = pattern.findall(html.text)
 
     # port
-    pattern = re.compile("<h4>Port(.*?)</h4>")
+    pattern = re.compile("<h4>.*?Port.*?<span id=.*?>(.*?)\n</span>")  # 2017-12-30 修复
     port = pattern.findall(html.text)
     for index, item in enumerate(port):
         port[index] = re.findall("\d+", item)[0]  # 清理'：'乱码
@@ -35,7 +36,7 @@ def get_free_ss_info():
 
     # Password
     # 不是每个都有密码，貌似没有提供密码的不能用
-    pattern = re.compile("<h4>.*?Password.*?<span id=.*?>(.*?)</span>")
+    pattern = re.compile("<h4>.*?Password.*?<span id=.*?>(.*?)\n</span>")  # 2017-12-30 修复
     password = pattern.findall(html.text)
 
     # Method
@@ -43,17 +44,12 @@ def get_free_ss_info():
     method = pattern.findall(html.text)
     ss_infos = []
     for i in range(12):
-        # yield {'IP_Address': ip_address[i], 'port': port[i], 'local_port': local_port,
-        #        'Password': password[i], 'Method': method[i]}
         ss_infos.append({'IP_Address': ip_address[i], 'port': port[i], 'local_port': local_port,
                          'Password': password[i], 'Method': method[i]})
     return ss_infos
 
 
 def main():
-    # ss_infos = []
-    # for item in get_free_ss_info():
-    #     ss_infos.append(item)
     ss_infos = get_free_ss_info()
 
     str = '''

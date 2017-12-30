@@ -12,8 +12,8 @@ try:
     html = requests.get(url)
     os.system('echo get free ss from ' + url)
 except:
-    os.system('echo ' + url + 'failed')
-
+    os.system('echo ' + url + ' failed')
+    exit(0)
 
 # pattern = re.compile(r"<td>([_\da-zA-Z.-]+)</td>")
 pattern = re.compile('<td>(.*?)</td>')
@@ -23,7 +23,7 @@ elem = pattern.findall(html.text)
 ss_info = []
 for i in range(0, 35, 7):
     if re.match('[_\da-zA-Z.-]+', elem[i+3]):
-        print (elem[i+3])
+        #print (elem[i+3])
         ss_info.append({'ip': elem[i+1], 'port': elem[i+2], 'local_port': '1080', 'password': elem[i+3], 'method': elem[i+4]})
 
 i = 0
