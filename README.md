@@ -19,7 +19,7 @@ pip install shadowsocks
 将项目中的SwitchyOmega.crx拖向 设置-扩展程序 即可  
 安装好之后Chrome右上角有个圈圈，点击圈圈->选项->新建情景模式->随意取个名字->代理协议:SOCKS5,代理服务器:127.0.0.1,代理端口:1080就可以了。  
 运行上面的命令，再选择圈圈中刚在新建的情景模式即可   
-![SwitchyOmega](http://i1.piimg.com/1949/3075a58fc94b937a.png)
+![SwitchyOmega](http://oqnf3xv0b.bkt.clouddn.com/17-12-30/45168816.jpg)  
 
 
 ### Firefox安装Foxyproxy standard和配置   
