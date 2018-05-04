@@ -10,7 +10,7 @@
 
 ## 准备
 
-需要提前装Python3 以及 pip
+需要提前装python和pip  
 
 ### 安装Shadowsocks
 ```
@@ -32,7 +32,7 @@ pip install shadowsocks
 
 ## 使用
 ### 使用脚本： 
-`python3 ishadow_ss.py` 或 `python3 h6h6_ss.py`  
+`python ishadow_ss.py` 或 `python h6h6_ss.py`  
 
 ishadow有12个免费ss可供切换  http://ss.ishadowx.com/  
 h6h6有5个免费ss可供切换  http://h6v6.com/   
